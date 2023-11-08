@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +39,5 @@ Route::prefix('login/{provider}')->where(['provider' => 'line|github'])->group(f
 });
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('login');
 });

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+
 Route::prefix('login/{provider}')->where(['provider' => 'line|github'])->group(function(){
     //redirectToProviderアクションは、Line(外部プロバイダ)へ認証フローを開始するためのもの
     Route::get('/', 'App\Http\Controllers\Auth\LoginController@redirectToProvider')->name('social_login.redirect');
@@ -37,5 +41,5 @@ Route::prefix('login/{provider}')->where(['provider' => 'line|github'])->group(f
 });
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('login');
 });
