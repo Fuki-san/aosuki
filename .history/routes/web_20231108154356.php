@@ -60,5 +60,5 @@ Route::prefix('login/{provider}')->where(['provider' => 'line|github'])->group(f
 });
 
 Route::get('/', function () {
-    return view('login');
+    return view('login')
 });

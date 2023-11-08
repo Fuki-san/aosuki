@@ -59,6 +59,4 @@ Route::prefix('login/{provider}')->where(['provider' => 'line|github'])->group(f
     // /login/line,/login/line/callback,/login/github/,/login/github/callbackが有効なURL
 });
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', [])
