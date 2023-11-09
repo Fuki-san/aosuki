@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/home/laravel/camp/10_laravel/aosuki/resources/css
+/* resources/css/app.css */
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+[x-cloak] {
+    display: none;
+}
