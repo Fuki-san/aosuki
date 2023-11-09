@@ -1,0 +1,45 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('people', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->comment('名前');
+            $table->string('email')->unique()->comment('メールアドレス(学生メールアドレスは正規表現で確認)');
+            $table->timestamp('email_verified_at')->nullable()->comment('メール認証日時');
+            $table->string('password')->comment('パスワード');
+            $table->rememberToken()->comment('ログイン省略トークン');
+            $table->enum('gender', ['male', 'female'])->comment('男性 or 女性');
+            $table->date('birth')->comment('生年月日');
+            $table->string('address')->comment('住所');
+            $table->string('nickname')->comment('ニックネーム');
+            $table->integer('height')->comment('身長');
+            $table->integer('weight')->comment('体重');
+            $table->string('Academic_background')->comment('学歴');
+            $table->string('income')->comment('年収');
+            $table->string('holiday')->comment('休日');
+            $table->enum('smoking_habit', ['not_at_all', 'occasionally', 'heavy']);
+            $table->enum('goals', ['love', 'info', 'aoharu', 'enjoy', 'somehow', 'friend']);
+            $table->binary('image_data')->comment('画像データ');
+            $table->check('email REGEXP "^[^@]+@[^@]+\.ac\.jp$"')->comment('学生メールアドレス');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('people');
+    }
+};
