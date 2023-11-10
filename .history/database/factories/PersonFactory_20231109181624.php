@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class AosukiFactory extends Factory
+class PersonFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,16 +16,14 @@ class AosukiFactory extends Factory
      */
     public function definition(): array
     {
-
-        $faker = \Faker\Factory::create('ja_JP');
+        
 
         return [
-            'name' => $faker->name(),
+            'name' => $faker->name,
             'email' => $faker->unique()->safeEmail,
-            'email_verified_at' => now(),
-            'password' => bcrypt($faker->password),
-            'two_factor_secret' => null,
-            'two_factor_recovery_code' => null,
+            'email_verified_at' => $faker->date(),
+            'password' => $faker->password,
+            
         ];
     }
 }

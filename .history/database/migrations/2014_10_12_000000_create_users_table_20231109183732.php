@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('名前');
             $table->string('email')->unique()->comment('通常メールアドレス');
             $table->timestamp('email_verified_at')->nullable()->comment('メール認証日時');
             $table->string('password')->comment('パスワード');
             $table->rememberToken()->comment('ログイン省略トークン');
+            // 'profile_photo_path' カラムを追加
+            $table->string('profile_photo_path')->nullable();
+            // 'current_team_id' カラムを追加
+            $table->unsignedBigInteger('current_team_id')->nullable();
+            
             $table->enum('gender', ['male', 'female'])->comment('男性 or 女性');
             $table->date('birth')->comment('生年月日');
             $table->string('address')->comment('住所');
@@ -40,6 +45,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('users');
     }
 };
