@@ -137,7 +137,7 @@
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
-                            <x-responsive-nav-link :href="route('criterias.index')">
+                            <x-responsive-nav-link :href="route('criteria.index')">
                                 {{ __('Search Criteria') }}
                             </x-responsive-nav-link>
 
@@ -222,11 +222,11 @@
                         {{ __('Profile') }}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('criterias.index')">
+                    <x-responsive-nav-link :href="route('profile.show')">
                         {{ __('Search Criteria') }}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('announcements.index')">
+                    <x-responsive-nav-link :href="route('profile.show')">
                         {{ __('Announcement') }}
                     </x-responsive-nav-link>
 

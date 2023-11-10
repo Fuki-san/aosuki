@@ -226,7 +226,7 @@
                         {{ __('Search Criteria') }}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('announcements.index')">
+                    <x-responsive-nav-link :href="route('profile.show')">
                         {{ __('Announcement') }}
                     </x-responsive-nav-link>
 

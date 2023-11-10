@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\DislikeController;
 use App\Http\Controllers\HobbyController;
@@ -94,15 +93,3 @@ Route::resource('preferences', PreferenceController::class)
     ->only(['show', 'index']);
 
 Route::resource('criterias', CriteriaController::class)
-    ->only(['create', 'store', 'edit', 'update', 'destory'])
-    ->middleware('auth');
-Route::resource('criterias', CriteriaController::class)
-    ->only(['show', 'index']);
-
-Route::resource('announcements', AnnouncementController::class)
-    ->only(['create', 'store', 'edit', 'update', 'destory'])
-    ->middleware('auth');
-Route::resource('announcements', AnnouncementController::class)
-    ->only(['show', 'index']);
-
-

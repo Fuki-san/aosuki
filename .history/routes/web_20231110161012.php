@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
-use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\DislikeController;
 use App\Http\Controllers\HobbyController;
 use App\Http\Controllers\LikeController;
@@ -12,6 +10,7 @@ use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PreferenceController;
 use App\Models\Dislike;
+
 
 Route::get('/', function () {
     return view('dashboard');
@@ -92,17 +91,3 @@ Route::resource('preferences', PreferenceController::class)
     ->middleware('auth');
 Route::resource('preferences', PreferenceController::class)
     ->only(['show', 'index']);
-
-Route::resource('criterias', CriteriaController::class)
-    ->only(['create', 'store', 'edit', 'update', 'destory'])
-    ->middleware('auth');
-Route::resource('criterias', CriteriaController::class)
-    ->only(['show', 'index']);
-
-Route::resource('announcements', AnnouncementController::class)
-    ->only(['create', 'store', 'edit', 'update', 'destory'])
-    ->middleware('auth');
-Route::resource('announcements', AnnouncementController::class)
-    ->only(['show', 'index']);
-
-

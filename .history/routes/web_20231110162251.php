@@ -102,7 +102,7 @@ Route::resource('criterias', CriteriaController::class)
 Route::resource('announcements', AnnouncementController::class)
     ->only(['create', 'store', 'edit', 'update', 'destory'])
     ->middleware('auth');
-Route::resource('announcements', AnnouncementController::class)
+Route::resource('criterias', CriteriaController::class)
     ->only(['show', 'index']);
 
 
