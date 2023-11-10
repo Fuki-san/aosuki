@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class ChatController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('posts.index');
+        //
     }
 
     /**
@@ -19,7 +19,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        //
     }
 
     /**
