@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profiles.index');
+        return view('profile.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('profiles.create');
+        return view('profile.create');
     }
 
     /**
@@ -40,11 +40,8 @@ class ProfileController extends Controller
         $profile->hobby = $request->hobby;
         $profile->dislike = $request->dislike;
         $profile->mbti = $request->mbti;
-        $profile->smoking = $request->smoking;
-        $profile->distance = $request->distance;
-        $profile->where = $request->where;
-        $profile->age = $request->age;
-        $profile->like = $request->like;
+        $profile->smoking = $request->nickname;
+        $profile->nickname = $request->nickname;
     //画像取得($profileは画像以外もあるから、$fileに画像だけいれる)
         $file = $request->file('image');
         $profile->image = date('YmdHis') . '_' . $file->getClientOriginalName();
