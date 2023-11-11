@@ -13,6 +13,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/socialite": "^5.10",
         "laravel/tinker": "^2.8",
+        "linecorp/line-bot-sdk": "^9.3",
         "livewire/livewire": "^3.0",
         "socialiteproviders/line": "^4.1"
     },
